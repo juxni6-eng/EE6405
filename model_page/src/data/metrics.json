@@ -15,11 +15,11 @@
         {
           "model": "BERT",
           "metrics": {
-            "accuracy": 0.903,
-            "precision": 0.896,
-            "recall": 0.912,
-            "f1": 0.904,
-            "auc": 0.955
+            "accuracy": 0.9212,
+            "precision": 0.9188,
+            "recall": 0.9239,
+            "f1": 0.9214,
+            "auc": 0.9728
           },
           "figures": {
             "roc": "/public/images/imdb/bert/roc.png",
@@ -39,8 +39,153 @@
             "auc": "/public/images/imdb/roberta/roberta_auc.png",
             "confusion": "/public/images/imdb/roberta/roberta_confusion.png"
           }
+        },
+        {
+          "model": "LSTM",
+          "metrics": {
+            "accuracy": 0.9077,
+            "precision": 0.8770,
+            "recall": 0.8785,
+            "f1": 0.8777,
+            "auc": 0.9531
+          },
+          "figures": {
+            "roc": "/public/images/imdb/lstm/roc.png",
+            "confusion": "/public/images/imdb/lstm/confusion.png"
+          }
+        },
+        {
+          "model": "Bi-LSTM",
+          "metrics": {
+            "accuracy": 0.8000,
+            "precision": 0.7914,
+            "recall": 0.8162,
+            "f1": 0.8036,
+            "auc": 0.8726
+          },
+          "figures": {
+            "roc": "/public/images/imdb/bi-lstm/roc.png",
+            "confusion": "/public/images/imdb/bi-lstm/confusion.png"
+          }
+        },
+        {
+          "model": "CNN",
+          "metrics": {
+            "accuracy": 0.8653,
+            "precision": 0.8659,
+            "recall": 0.8653,
+            "f1": 0.8653,
+            "auc": 0.9388
+          },
+          "figures": {
+            "roc": "/public/images/imdb/cnn/roc.png",
+            "confusion": "/public/images/imdb/cnn/confusion.png"
+          }
+        },
+        {
+          "model": "RNN",
+          "metrics": {
+            "accuracy": 0.7474,
+            "precision": 0.7476,
+            "recall": 0.7474,
+            "f1": 0.7473,
+            "auc": 0.7974
+          },
+          "figures": {
+            "roc": "/public/images/imdb/rnn/roc.png",
+            "confusion": "/public/images/imdb/rnn/confusion.png"
+          }
         }
-
+      ]
+    },
+    {
+      "name": "SST-2",
+      "task": "binary",
+      "entries": [
+        {
+          "model": "BERT",
+          "metrics": {
+            "accuracy": 0.9300,
+            "precision": 0.9209,
+            "recall": 0.9437,
+            "f1": 0.9321,
+            "auc": 0.9759
+          },
+          "figures": {
+            "roc": "/public/images/sst2/bert/roc.png",
+            "confusion": "/public/images/sst2/bert/confusion.png"
+          }
+        },
+        {
+          "model": "RoBERTa",
+          "metrics": {
+            "accuracy": 0.9151,
+            "precision": 0.9022,
+            "recall": 0.9347,
+            "f1": 0.9181,
+            "auc": 0.9728
+          },
+          "figures": {
+            "auc": "/public/images/sst2/roberta/roc.png",
+            "confusion": "/public/images/sst2/roberta/confusion.png"
+          }
+        },
+        {
+          "model": "LSTM",
+          "metrics": {
+            "accuracy": 0.9154,
+            "precision": 0.9096,
+            "recall": 0.8933,
+            "f1": 0.8913,
+            "auc": 0.9403
+          },
+          "figures": {
+            "roc": "/public/images/sst2/lstm/roc.png",
+            "confusion": "/public/images/sst2/lstm/confusion.png"
+          }
+        },
+        {
+          "model": "Bi-LSTM",
+          "metrics": {
+            "accuracy": 0.7970,
+            "precision": 0.8004,
+            "recall": 0.7970,
+            "f1": 0.7962,
+            "auc": 0.8892
+          },
+          "figures": {
+            "roc": "/public/images/sst2/bi-lstm/roc.png",
+            "confusion": "/public/images/sst2/bi-lstm/confusion.png"
+          }
+        },
+        {
+          "model": "CNN",
+          "metrics": {
+            "accuracy": 0.9123,
+            "precision": 0.9126,
+            "recall": 0.9094,
+            "f1": 0.9108,
+            "auc": 0.9686
+          },
+          "figures": {
+            "roc": "/public/images/sst2/cnn/roc.png",
+            "confusion": "/public/images/sst2/cnn/confusion.png"
+          }
+        },
+        {
+          "model": "RNN",
+          "metrics": {
+            "accuracy": 0.8070,
+            "precision": 0.8223,
+            "recall": 0.7815,
+            "f1": 0.8014,
+            "auc": 0.8801
+          },
+          "figures": {
+            "roc": "/public/images/sst2/rnn/roc.png",
+            "confusion": "/public/images/sst2/rnn/confusion.png"
+          }
+        }
       ]
     },
     {
@@ -51,38 +196,129 @@
         {
           "model": "RoBERTa",
           "metrics": {
-            "accuracy": 0.942,
-            "macro_precision": 0.943,
-            "macro_recall": 0.941,
-            "macro_f1": 0.941,
+            "accuracy": 0.9429,
+            "macro_precision": 0.9431,
+            "macro_recall": 0.9429,
+            "macro_f1": 0.9428,
             "per_class": {
               "World": {
-                "precision": 0.95,
-                "recall": 0.94,
-                "f1": 0.95
+                "precision": 0.9507,
+                "recall": 0.9537,
+                "f1": 0.9522
               },
               "Sports": {
-                "precision": 0.96,
-                "recall": 0.96,
-                "f1": 0.96
+                "precision": 0.9853,
+                "recall": 0.9889,
+                "f1": 0.9871
               },
               "Business": {
-                "precision": 0.93,
-                "recall": 0.92,
-                "f1": 0.93
+                "precision": 0.9319,
+                "recall": 0.8937,
+                "f1": 0.9124
               },
               "Sci/Tech": {
-                "precision": 0.93,
-                "recall": 0.94,
-                "f1": 0.93
+                "precision": 0.9043,
+                "recall": 0.9353,
+                "f1": 0.9195
               }
             }
           },
           "figures": {
-            "confusion": "/public/images/agnews/roberta/confusion.png"
+            "confusion": "/public/images/agnews/roberta/img.png"
+          }
+        },
+        {
+          "model": "BERT",
+          "metrics": {
+            "accuracy": 0.9482,
+            "macro_precision": 0.9485,
+            "macro_recall": 0.9482,
+            "macro_f1": 0.9482,
+            "per_class": {
+              "World": { "precision": 0.9560, "recall": 0.9480, "f1": 0.9520 },
+              "Sports": { "precision": 0.9490, "recall": 0.9520, "f1": 0.9505 },
+              "Business": { "precision": 0.9450, "recall": 0.9430, "f1": 0.9440 },
+              "Sci/Tech": { "precision": 0.9480, "recall": 0.9500, "f1": 0.9490 }
+            }
+          },
+          "figures": {
+            "confusion": "/public/images/agnews/bert/img.png"
+          }
+        },
+        {
+          "model": "LSTM",
+          "metrics": {
+            "accuracy": 0.9107,
+            "macro_precision": 0.9109,
+            "macro_recall": 0.9107,
+            "macro_f1": 0.9106,
+            "per_class": {
+              "World": { "precision": 0.9200, "recall": 0.9050, "f1": 0.9124 },
+              "Sports": { "precision": 0.9140, "recall": 0.9180, "f1": 0.9160 },
+              "Business": { "precision": 0.9000, "recall": 0.9040, "f1": 0.9020 },
+              "Sci/Tech": { "precision": 0.9096, "recall": 0.9168, "f1": 0.9132 }
+            }
+          },
+          "figures": {
+            "confusion": "/public/images/agnews/lstm/img.png"
+          }
+        },
+        {
+          "model": "Bi-LSTM",
+          "metrics": {
+            "accuracy": 0.9124,
+            "macro_precision": 0.9136,
+            "macro_recall": 0.9124,
+            "macro_f1": 0.9122,
+            "per_class": {
+              "World": { "precision": 0.9180, "recall": 0.9100, "f1": 0.9139 },
+              "Sports": { "precision": 0.9160, "recall": 0.9180, "f1": 0.9170 },
+              "Business": { "precision": 0.9060, "recall": 0.9090, "f1": 0.9075 },
+              "Sci/Tech": { "precision": 0.9145, "recall": 0.9125, "f1": 0.9135 }
+            }
+          },
+          "figures": {
+            "confusion": "/public/images/agnews/bi-lstm/img.png"
+          }
+        },
+        {
+          "model": "CNN",
+          "metrics": {
+            "accuracy": 0.8610,
+            "macro_precision": 0.8638,
+            "macro_recall": 0.8588,
+            "macro_f1": 0.8589,
+            "per_class": {
+              "World": { "precision": 0.8700, "recall": 0.8600, "f1": 0.8650 },
+              "Sports": { "precision": 0.8650, "recall": 0.8620, "f1": 0.8635 },
+              "Business": { "precision": 0.8600, "recall": 0.8550, "f1": 0.8575 },
+              "Sci/Tech": { "precision": 0.8600, "recall": 0.8580, "f1": 0.8590 }
+            }
+          },
+          "figures": {
+            "confusion": "/public/images/agnews/cnn/img.png"
+          }
+        },
+        {
+          "model": "RNN",
+          "metrics": {
+            "accuracy": 0.8946,
+            "macro_precision": 0.8947,
+            "macro_recall": 0.8946,
+            "macro_f1": 0.8945,
+            "per_class": {
+              "World": { "precision": 0.8960, "recall": 0.8950, "f1": 0.8955 },
+              "Sports": { "precision": 0.8950, "recall": 0.8960, "f1": 0.8955 },
+              "Business": { "precision": 0.8930, "recall": 0.8920, "f1": 0.8925 },
+              "Sci/Tech": { "precision": 0.8950, "recall": 0.8955, "f1": 0.8952 }
+            }
+          },
+          "figures": {
+            "confusion": "/public/images/agnews/rnn/img.png"
           }
         }
       ]
     }
+
   ]
 }
