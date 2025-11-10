@@ -1,0 +1,88 @@
+{
+  "models": [
+    "CNN",
+    "RNN",
+    "LSTM",
+    "Bi-LSTM",
+    "BERT",
+    "RoBERTa"
+  ],
+  "datasets": [
+    {
+      "name": "IMDB",
+      "task": "binary",
+      "entries": [
+        {
+          "model": "BERT",
+          "metrics": {
+            "accuracy": 0.903,
+            "precision": 0.896,
+            "recall": 0.912,
+            "f1": 0.904,
+            "auc": 0.955
+          },
+          "figures": {
+            "roc": "/public/images/imdb/bert/roc.png",
+            "confusion": "/public/images/imdb/bert/confusion.png"
+          }
+        },
+        {
+          "model": "RoBERTa",
+          "metrics": {
+            "accuracy": 0.9355,
+            "precision": 0.9341,
+            "recall": 0.9372,
+            "f1": 0.9356,
+            "auc": 0.9821
+          },
+          "figures": {
+            "auc": "/public/images/imdb/roberta/roberta_auc.png",
+            "confusion": "/public/images/imdb/roberta/roberta_confusion.png"
+          }
+        }
+
+      ]
+    },
+    {
+      "name": "AG News",
+      "task": "multiclass",
+      "num_classes": 4,
+      "entries": [
+        {
+          "model": "RoBERTa",
+          "metrics": {
+            "accuracy": 0.942,
+            "macro_precision": 0.943,
+            "macro_recall": 0.941,
+            "macro_f1": 0.941,
+            "per_class": {
+              "World": {
+                "precision": 0.95,
+                "recall": 0.94,
+                "f1": 0.95
+              },
+              "Sports": {
+                "precision": 0.96,
+                "recall": 0.96,
+                "f1": 0.96
+              },
+              "Business": {
+                "precision": 0.93,
+                "recall": 0.92,
+                "f1": 0.93
+              },
+              "Sci/Tech": {
+                "precision": 0.93,
+                "recall": 0.94,
+                "f1": 0.93
+              }
+            }
+          },
+          "figures": {
+            "confusion": "/public/images/agnews/roberta/confusion.png"
+          }
+        }
+      ]
+    }
+  ]
+}
