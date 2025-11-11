@@ -19,15 +19,26 @@
 
       <div class="prediction-demo">
         <h3>Single Prediction (Simulated)</h3>
+
         <div class="example-box">
           <label>Example Input:</label>
           <p class="example-text-display">{{ exampleSentence }}</p>
         </div>
 
-        <div class="example-box result-box">
-          <label>Model's Output:</label>
-          <p class="example-output" :class="resultClass">{{ exampleResult }}</p>
+        <div class="output-reason-container">
+          <div class="example-box result-box">
+            <label>Model's Output:</label>
+            <p class="example-output" :class="resultClass">
+              {{ exampleResult }} ({{ isCorrect ? 'True' : 'False' }})
+            </p>
+          </div>
+
+          <div class="example-box reason-box">
+            <label>Reasoning:</label>
+            <p class="example-reason">{{ exampleReason }}</p>
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -53,35 +64,51 @@ const exampleSentence = ref(
   "The actors' performances were amazing, the visuals stunning, and the plot deeply moving. I absolutely would not recommend this film to anyone who enjoys being bored, wasting time, or empty plots."
 )
 
+const TRUE_LABEL = "Positive";
+
 const exampleResult = computed(() => {
   const model = selectedModel.value;
-
   switch (model) {
     case "CNN":
-      return "Negative - Lacks sequential context";
     case "RNN":
-      return "Negative - Short-term memory/Recent bias";
     case "LSTM":
-      return "Negative - Unidirectional context is insufficient";
+      return "Negative";
     case "Bi-LSTM":
-      return "Positive - Bidirectional context captured negation";
     case "BERT":
-      return "Positive - Transformer self-attention understood irony";
     case "RoBERTa":
-      return "Positive - Transformer self-attention understood irony";
+      return "Positive";
     default:
       return "N/A";
   }
 })
 
+const isCorrect = computed(() => {
+  return exampleResult.value === TRUE_LABEL;
+});
+
+const exampleReason = computed(() => {
+  const model = selectedModel.value;
+  switch (model) {
+    case "CNN":
+      return "Lacks sequential context";
+    case "RNN":
+      return "Short-term memory/Recent bias";
+    case "LSTM":
+      return "Unidirectional context is insufficient";
+    case "Bi-LSTM":
+      return "Bidirectional context captured negation";
+    case "BERT":
+      return "Transformer self-attention understood irony";
+    case "RoBERTa":
+      return "Transformer self-attention understood irony";
+    default:
+      return "No simulation data available.";
+  }
+})
+
 const resultClass = computed(() => {
   if (!exampleResult.value) return '';
-  if (exampleResult.value.startsWith('Positive')) {
-    return 'result-positive';
-  } else if (exampleResult.value.startsWith('Negative')) {
-    return 'result-negative';
-  }
-  return '';
+  return isCorrect.value ? 'result-positive' : 'result-negative';
 })
 
 onMounted(async () => {
@@ -151,8 +178,19 @@ const currentEntry = computed(() => {
   margin: 0;
   line-height: 1.5;
 }
+
+/* V-DECK: 新增的容器样式 */
+.output-reason-container {
+  display: grid;
+  /* 自动宽度 (fit-content) + 剩余空间 (1fr) */
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start; /* 顶部对齐 */
+}
+
 .result-box {
-  margin-top: 16px;
+  margin-top: 0; /* 移除顶部外边距 */
+  margin-bottom: 0; /* 移除底部外边距 */
 }
 .example-output {
   font-weight: 700;
@@ -163,6 +201,7 @@ const currentEntry = computed(() => {
   width: fit-content;
   margin: 0;
 }
+
 .result-positive {
   color: #059669;
   background-color: #ecfdf5;
@@ -172,5 +211,24 @@ const currentEntry = computed(() => {
   color: #dc2626;
   background-color: #fee2e2;
   border-color: #fca5a5;
+}
+
+.reason-box {
+  margin-top: 0; /* 移除顶部外边距 */
+  margin-bottom: 0; /* 移除底部外边距 */
+}
+.example-reason {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  background-color: #f9fafb;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  margin: 0;
+  line-height: 1.5;
+  color: #4b5563;
+  font-style: italic;
+  width: 100%; /* 确保填满网格列 */
+  box-sizing: border-box; /* 确保 padding 不会撑破宽度 */
 }
 </style>
