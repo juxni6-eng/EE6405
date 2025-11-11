@@ -224,6 +224,7 @@
             }
           },
           "figures": {
+            "roc": "/public/images/agnews/roberta/roc.png",
             "confusion": "/public/images/agnews/roberta/img.png"
           }
         },
@@ -242,6 +243,7 @@
             }
           },
           "figures": {
+            "roc": "/public/images/agnews/bert/roc.png",
             "confusion": "/public/images/agnews/bert/img.png"
           }
         },
@@ -260,6 +262,7 @@
             }
           },
           "figures": {
+            "roc": "/public/images/agnews/lstm/roc.png",
             "confusion": "/public/images/agnews/lstm/img.png"
           }
         },
@@ -278,6 +281,7 @@
             }
           },
           "figures": {
+            "roc": "/public/images/agnews/bi-lstm/roc.png",
             "confusion": "/public/images/agnews/bi-lstm/img.png"
           }
         },
@@ -296,6 +300,7 @@
             }
           },
           "figures": {
+            "roc": "/public/images/agnews/cnn/roc.png",
             "confusion": "/public/images/agnews/cnn/img.png"
           }
         },
@@ -314,6 +319,7 @@
             }
           },
           "figures": {
+            "roc": "/public/images/agnews/rnn/roc.png",
             "confusion": "/public/images/agnews/rnn/img.png"
           }
         }
