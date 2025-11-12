@@ -18,7 +18,7 @@
       <Charts :figures="currentEntry.figures" />
 
       <div class="prediction-demo">
-        <h3>Single Prediction (Simulated)</h3>
+        <h3>Single Prediction</h3>
 
         <div class="example-box">
           <label>Example Input:</label>
